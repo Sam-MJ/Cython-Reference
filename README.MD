@@ -36,3 +36,14 @@ Unix: '\_\_attribute\_\_((visibility("default")))'
 ### LINK : fatal error LNK1181: cannot open input file 'filename'
 The linker can't find a file it needs, such as .dll, .lib or .h.
 Check the includes_dir and libs_dir in setup.py
+
+
+
+## Mac - make sure it's the same python version building as running app
+
+### lib is created called with -lib prefix, i.e. libhello, if you rename the linker cant find it. 
+
+## library not loaded, image not found
+rpath needs to be set at linker stage or at runtime - pass commands to cython
+https://stackoverflow.com/questions/856116/changing-ld-library-path-at-runtime-for-ctypes
+https://stackoverflow.com/questions/43551483/how-to-set-rpath-in-cmake

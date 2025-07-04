@@ -2,10 +2,14 @@
 #ifndef HELLO_H
 #define HELLO_H
 
-__declspec(dllexport) int number(void);
+#if   defined _WIN32
+#define LIB_EXPORT __declspec(dllexport)
+#else
+#define LIB_EXPORT
+#endif
 
-__declspec(dllexport) int hello(char* name);
-
-__declspec(dllexport) int goodbye(char* name);
+LIB_EXPORT int number(void);
+LIB_EXPORT int hello(char* name);
+LIB_EXPORT int goodbye(char* name);
 
 #endif
